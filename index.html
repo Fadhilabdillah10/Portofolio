@@ -18,12 +18,20 @@
     <p>Mahasiswa Informatika | Web Developer Pemula</p>
   </header>
   <nav>
-    <a href="#" onclick="showSection('about')">About</a>
-    <a href="#" onclick="showSection('skills')">Keahlian</a>
-    <a href="#" onclick="showSection('projects')">Proyek</a>
-    <a href="#" onclick="showSection('contact')">Kontak</a>
-  </nav>
-  
+  <div class="navbar">
+    <div class="brand">Portofolio</div>
+    <div class="hamburger" onclick="toggleMenu()">
+      ☰
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#" onclick="showSection('about')">Tentang Saya</a>
+      <a href="#" onclick="showSection('skills')">Keahlian</a>
+      <a href="#" onclick="showSection('projects')">Proyek</a>
+      <a href="#" onclick="showSection('contact')">Kontak</a>
+    </div>
+  </div>
+</nav>
+
 
 
   <section id="about">
@@ -102,6 +110,11 @@
       showSection("about");
       document.querySelector("nav a").classList.add("active");
     });
+  function toggleMenu() {
+    const navLinks = document.getElementById("navLinks");
+    navLinks.classList.toggle("show");
+  }
+
   </script>
   
 
