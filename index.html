@@ -12,17 +12,18 @@
 </head>
 <body>
   <header>
-    <img src="profil.jpg" alt="Foto Profil Fadhil Abdillah" class="profil-img">
+    <img src="images/profil.jpg" alt="Foto Profil Fadhil Abdillah" class="profil-img">
     <h1>FADHIL ABDILLAH</h1>
     <h2>23110401</h2>
     <p>Mahasiswa Informatika | Web Developer Pemula</p>
   </header>
- <nav>
-  <a href="#" onclick="showSection('about')">Tentang Saya</a>
-  <a href="#" onclick="showSection('skills')">Keahlian</a>
-  <a href="#" onclick="showSection('projects')">Proyek</a>
-  <a href="#" onclick="showSection('contact')">Kontak</a>
-</nav>
+  <nav>
+    <a href="#" onclick="showSection('about')">About</a>
+    <a href="#" onclick="showSection('skills')">Keahlian</a>
+    <a href="#" onclick="showSection('projects')">Proyek</a>
+    <a href="#" onclick="showSection('contact')">Kontak</a>
+  </nav>
+  
 
 
   <section id="about">
@@ -39,39 +40,70 @@
       <li>Git & GitHub</li>
   </section>
 
-  <section id="projects">
+  <section id="projects"><section id="projects">
     <h2>Proyek Saya</h2>
-    <p>Belum ada proyek. Sedang dalam proses belajar </p>
+  
+      <p>Berikut adalah Project IOT yang pernah saya buat yaitu Sistem Parkir</p>
+    <div class="project-gallery">
+      <div class="project-item">
+        <img src="images/Proyek 1.jpg" alt="Proyek 1" />
+      </div>
+      
+      <div class="project-item">
+        <img src="images/Proyek 2.jpg" alt="Proyek 2" />
+      </div>
+
+      <div class="project-item">
+        <img src="images/Proyek 3.jpg" alt="Proyek 2" />
+      </div>
+      
+    </div>
+  </section>
+  
   </section>
 
   <section id="contact">
-    <h2>Kontak  : +62 831-1736-0716</h2>
-    <p>Email    : abdillahfadhil@gmail.com</p>
-    <p>Instagram: fdhl_abdllh10</p>
-    <p>GitHub   : <a href="https://github.com/fadhilabdillah10" target="_blank">https://fadhilabdillah10.github.io/Portofolio/</a></p>
+    <h2>Kontak</h2>
+    <p>
+      WhatsApp: 
+      <a href="https://wa.me/6283117360716" target="_blank" style="color:green; font-weight:bold;">
+        Contact me 
+      </a>
+    </p>
+    <p>Instagram : fdhl_abdllh10</p>
+    <p>Email: abdillahfadhil@gmail.com</p>
+    <p>GitHub: <a href="https://github.com/namakamu" target="_blank">github.com/namakamu</a></p>
   </section>
+  
 
   <footer>
     <p>© 2025_FADHILABDILLAH.</p>
   </footer>
 
   <script>
-  function showSection(id) {
-    const sections = document.querySelectorAll("section");
-    sections.forEach(section => {
-      if (section.id === id) {
-        section.style.display = "block";
-      } else {
-        section.style.display = "none";
-      }
+    function showSection(id) {
+      // Sembunyikan semua section
+      const sections = document.querySelectorAll("section");
+      sections.forEach(section => {
+        section.style.display = section.id === id ? "block" : "none";
+      });
+  
+      // Hapus class active dari semua link
+      const links = document.querySelectorAll("nav a");
+      links.forEach(link => link.classList.remove("active"));
+  
+      // Tambah class active ke yang diklik
+      const clickedLink = Array.from(links).find(link => link.textContent.replace(/\s+/g, '').toLowerCase() === id);
+      if (clickedLink) clickedLink.classList.add("active");
+    }
+  
+    // Tampilkan default dan beri class active
+    document.addEventListener("DOMContentLoaded", () => {
+      showSection("about");
+      document.querySelector("nav a").classList.add("active");
     });
-  }
-
-  // Tampilkan default (Tentang Saya)
-  document.addEventListener("DOMContentLoaded", () => {
-    showSection("about");
-  });
-</script>
+  </script>
+  
 
   
 </body>
