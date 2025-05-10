@@ -206,6 +206,14 @@ footer {
   color: #333;
 }
 
+/* Foto Profil Bulat */
+.profil-img {
+  width: 150px;  /* Sesuaikan dengan ukuran yang diinginkan */
+  height: 150px;  /* Sesuaikan dengan ukuran yang diinginkan */
+  border-radius: 50%; /* Membuat gambar menjadi bulat */
+  object-fit: cover; /* Menjaga gambar tetap proporsional tanpa terdistorsi */
+}
+
 /* Responsive */
 @media screen and (max-width: 768px) {
   .skills-grid {
