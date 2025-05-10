@@ -115,6 +115,17 @@
     navLinks.classList.toggle("show");
   }
 
+  // Tutup menu saat salah satu link diklik (khusus mobile)
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      const navLinks = document.getElementById("navLinks");
+      if (window.innerWidth <= 768) {
+        navLinks.classList.remove("show");
+      }
+    });
+  });
+
+
   </script>
   
 
