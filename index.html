@@ -17,12 +17,13 @@
     <h2>23110401</h2>
     <p>Mahasiswa Informatika | Web Developer Pemula</p>
   </header>
-  <nav>
-    <a href="#about">Tentang Saya</a>
-    <a href="#skills">Keahlian</a>
-    <a href="#projects">Proyek</a>
-    <a href="#contact">Kontak</a>
-  </nav>
+ <nav>
+  <a href="#" onclick="showSection('about')">Tentang Saya</a>
+  <a href="#" onclick="showSection('skills')">Keahlian</a>
+  <a href="#" onclick="showSection('projects')">Proyek</a>
+  <a href="#" onclick="showSection('contact')">Kontak</a>
+</nav>
+
 
   <section id="about">
     <h2>Tentang Saya</h2>
@@ -55,23 +56,23 @@
   </footer>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const text = "Mahasiswa Informatika | Web Developer Pemula";
-      const target = document.querySelector("header p");
-      target.textContent = ""; // kosongkan isi awal
-      let index = 0;
-  
-      function typeEffect() {
-        if (index < text.length) {
-          target.textContent += text.charAt(index);
-          index++;
-          setTimeout(typeEffect, 50); // atur kecepatan di sini
-        }
+  function showSection(id) {
+    const sections = document.querySelectorAll("section");
+    sections.forEach(section => {
+      if (section.id === id) {
+        section.style.display = "block";
+      } else {
+        section.style.display = "none";
       }
-  
-      typeEffect();
     });
-  </script>
+  }
+
+  // Tampilkan default (Tentang Saya)
+  document.addEventListener("DOMContentLoaded", () => {
+    showSection("about");
+  });
+</script>
+
   
 </body>
 </html>
