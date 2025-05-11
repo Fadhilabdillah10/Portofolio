@@ -1,4 +1,4 @@
-/* Reset dasar */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -7,145 +7,128 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f6f8;
+  background-color: #f0f2f5;
   color: #333;
   line-height: 1.6;
 }
 
-/* Header */
+/* HEADER */
 header {
-  background: linear-gradient(to right, #4b6cb7, #182848);
+  background: linear-gradient(to right, #4e54c8, #8f94fb);
   color: white;
   padding: 3em 1em;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
   font-size: 2.5em;
   margin-bottom: 0.2em;
+  letter-spacing: 1px;
 }
 
 header h2 {
   font-weight: normal;
-  margin-bottom: 0.5em;
   font-size: 1.2em;
+  margin-bottom: 0.5em;
 }
 
 header p::after {
   content: "|";
-  animation: blinkCursor 0.7s steps(1) infinite;
-  color: #ddd;
+  animation: blink 0.7s steps(1) infinite;
+  color: #fff;
 }
 
-@keyframes blinkCursor {
+@keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
 
-/* Navbar */
+/* NAVIGATION */
 .navbar {
-  background-color: #162447;
+  background-color: #1f2f57;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1em;
+  padding: 1em 2em;
   position: relative;
+  z-index: 999;
 }
 
 .navbar .brand {
   color: white;
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.3em;
+  letter-spacing: 1px;
 }
 
 .navbar .hamburger {
-  font-size: 1.5em;
-  color: white;
   display: none;
+  font-size: 1.8em;
+  color: white;
   cursor: pointer;
 }
 
 .navbar .nav-links {
   display: flex;
-  gap: 40px;
+  gap: 30px;
 }
 
 .navbar .nav-links a {
   color: white;
-  font-weight: bold;
+  font-weight: 500;
   text-decoration: none;
-  font-size: 1.1em;
-  padding-bottom: 5px;
   position: relative;
+  padding-bottom: 5px;
 }
 
 .navbar .nav-links a:hover,
 .navbar .nav-links a.active {
-  color: gold;
+  color: #fddb3a;
 }
 
 .navbar .nav-links a.active::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 3px;
-  background: gold;
+  background-color: #fddb3a;
   left: 0;
   bottom: -5px;
 }
 
-/* Section umum */
+/* SECTIONS */
 section {
   background: white;
   max-width: 900px;
   margin: 2em auto;
   padding: 2em;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
 }
 
 section h2 {
   margin-bottom: 1em;
-  color: #222;
-  font-size: 1.6em;
-  border-left: 5px solid #4b6cb7;
-  padding-left: 0.5em;
+  color: #333;
+  font-size: 1.7em;
+  border-left: 5px solid #4e54c8;
+  padding-left: 0.6em;
 }
 
-/* About */
+/* ABOUT */
 #about p {
   font-size: 1.1em;
+  margin-bottom: 1em;
 }
 
-/* Skills */
-.skills-grid {
-  display: flex;
-  gap: 1em;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.skill-card {
-  background: #e9effc;
-  padding: 1em 1.5em;
-  border-radius: 10px;
-  font-weight: bold;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: all 0.3s ease-in-out;
-}
-
-.skill-card:hover {
-  background: #d0e2ff;
-  transform: scale(1.05);
-}
+/* SKILLS */
 .card {
-  background-color: #ffffff;
+  background-color: #f7f9fc;
   border-radius: 16px;
   padding: 25px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -159,47 +142,15 @@ section h2 {
   margin: 15px 0;
   display: flex;
   align-items: center;
-  color: #333;
 }
 
 .skills-list li i {
   margin-right: 12px;
-  font-size: 20px;
-  color: #2c64e3;
+  font-size: 22px;
+  color: #5566f2;
 }
 
-
-/* Contact */
-.contact-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-.contact-list li {
-  font-size: 1.1em;
-  margin: 0.5em 0;
-}
-
-.contact-list a {
-  color: #4b6cb7;
-  text-decoration: none;
-}
-
-.contact-list a:hover {
-  text-decoration: underline;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1.5em;
-  background: #4b6cb7;
-  color: #fff;
-  margin-top: 3em;
-  font-size: 0.9em;
-}
-
-/* Proyek */
+/* PROJECTS */
 .project-gallery {
   display: flex;
   flex-wrap: wrap;
@@ -211,10 +162,9 @@ footer {
 .project-item {
   width: 250px;
   background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  text-align: center;
   transition: transform 0.3s ease;
 }
 
@@ -224,29 +174,76 @@ footer {
 
 .project-item img {
   width: 100%;
-  height: auto;
   display: block;
+  border-bottom: 1px solid #eee;
 }
 
 .project-item p {
   padding: 1em;
   font-size: 0.95em;
-  color: #333;
 }
 
-/* Foto Profil Bulat */
+/* CONTACT */
+.contact-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.contact-list li {
+  font-size: 1.1em;
+  margin: 0.5em 0;
+}
+
+.contact-list a {
+  color: #4e54c8;
+  text-decoration: none;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1.5em;
+  background: #4e54c8;
+  color: #fff;
+  margin-top: 3em;
+  font-size: 0.9em;
+  letter-spacing: 0.5px;
+}
+
+/* PROFILE IMAGE */
 .profil-img {
-  width: 150px;  /* Sesuaikan dengan ukuran yang diinginkan */
-  height: 150px;  /* Sesuaikan dengan ukuran yang diinginkan */
-  border-radius: 50%; /* Membuat gambar menjadi bulat */
-  object-fit: cover; /* Menjaga gambar tetap proporsional tanpa terdistorsi */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media screen and (max-width: 768px) {
-  .skills-grid {
+  .navbar .nav-links {
     flex-direction: column;
-    align-items: center;
+    background-color: #1f2f57;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: none;
+    padding: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .navbar .nav-links.show {
+    display: flex;
+  }
+
+  .navbar .hamburger {
+    display: block;
   }
 
   header h1 {
@@ -258,23 +255,7 @@ footer {
     height: 110px;
   }
 
-  .navbar .nav-links {
-    flex-direction: column;
-    background-color: #162447;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    display: none;
-    padding: 1em;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  }
-
-  .navbar .nav-links.show {
-    display: flex;
-  }
-
-  .navbar .hamburger {
-    display: block;
+  .project-item {
+    width: 90%;
   }
 }
