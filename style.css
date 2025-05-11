@@ -7,9 +7,10 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f0f2f5;
+  background-color: #f4f6fa;
   color: #333;
   line-height: 1.6;
+  transition: background-color 0.3s ease;
 }
 
 /* HEADER */
@@ -28,9 +29,10 @@ header h1 {
 }
 
 header h2 {
-  font-weight: normal;
+  font-weight: 400;
   font-size: 1.2em;
   margin-bottom: 0.5em;
+  color: #e0e0e0;
 }
 
 header p::after {
@@ -58,7 +60,7 @@ header p::after {
 .navbar .brand {
   color: white;
   font-weight: bold;
-  font-size: 1.3em;
+  font-size: 1.4em;
   letter-spacing: 1px;
 }
 
@@ -80,6 +82,7 @@ header p::after {
   text-decoration: none;
   position: relative;
   padding-bottom: 5px;
+  transition: color 0.3s;
 }
 
 .navbar .nav-links a:hover,
@@ -120,6 +123,7 @@ section h2 {
 #about p {
   font-size: 1.1em;
   margin-bottom: 1em;
+  text-align: justify;
 }
 
 /* SKILLS */
@@ -147,7 +151,7 @@ section h2 {
 .skills-list li i {
   margin-right: 12px;
   font-size: 22px;
-  color: #5566f2;
+  color: #4e54c8;
 }
 
 /* PROJECTS */
@@ -165,11 +169,12 @@ section h2 {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-item:hover {
   transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
 .project-item img {
@@ -178,28 +183,19 @@ section h2 {
   border-bottom: 1px solid #eee;
 }
 
-.project-item p {
-  padding: 1em;
-  font-size: 0.95em;
-}
-
 /* CONTACT */
-.contact-list {
-  list-style: none;
-  padding-left: 0;
+#contact p {
+  font-size: 1.05em;
+  margin-bottom: 0.5em;
 }
 
-.contact-list li {
-  font-size: 1.1em;
-  margin: 0.5em 0;
-}
-
-.contact-list a {
+#contact a {
   color: #4e54c8;
+  font-weight: bold;
   text-decoration: none;
 }
 
-.contact-list a:hover {
+#contact a:hover {
   text-decoration: underline;
 }
 
@@ -257,5 +253,10 @@ footer {
 
   .project-item {
     width: 90%;
+  }
+
+  section {
+    margin: 1em 1em;
+    padding: 1.5em;
   }
 }
